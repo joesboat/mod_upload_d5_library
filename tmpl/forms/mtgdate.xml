@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset name="upload" label="Identify and name a file to upload.">
+		<field 
+			name="report"
+			type="spacer"
+			class='text'
+			label=""
+		/>
+		<field
+			name="text1"
+			type="spacer"
+			class="text"
+			label="Enter or select the date in YYYY-MM-DD format."
+		/>
+		<field 
+			name="created"
+			id="picker"
+			type="calendar"
+			label="Pick a date."
+			description="Picker to identify the date of the meeting report"
+			class="inputbox" 
+			size="20"
+			format="%Y-%m-%d"
+			filter="user_utc" 
+		/>
+		<field
+			name="text2"
+			type="spacer"
+			class="text"
+			label="The uploaded file will be named 'ExCom Mtg YYYY-MM-DD.xxx'."
+		/>
+		<field 
+			name="filename" 
+			type="file" 
+			label="Identify the file you wish to upload." 
+			description="Choose an image from your computer" 	
+			size="100" 
+			accept="*/*" 
+		/>
+		<field 
+			name="mysecretvariable" 
+			type="hidden" 
+			default="" 
+		/>
+	</fieldset>
+
+</form>
+

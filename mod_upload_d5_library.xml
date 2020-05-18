@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.4.8" client="site" method="upgrade">
+	<name>Upload D5 Library</name>
+	<author>Joseph P. Gibson</author>
+	<creationDate>June 2017</creationDate>
+	<copyright>Copyright 2017 Joseph P. Gibson</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>joe@joesboat.org</authorEmail>
+	<authorUrl>joesboat.org</authorUrl>
+	<version>1.0</version>
+	<description>Perform file uploads to specified libraries.</description>
+	<files>
+		<filename module="mod_upload_d5_library">mod_upload_d5_library.php</filename>
+		<filename>index.html</filename>
+		<filename>helper.php</filename>
+		<folder>tmpl</folder>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+			</fieldset>
+			<fieldset name="debug" label="Debug Controls">
+                <field 	name="siteLog" 
+                		type="radio" 
+                		size="1" 
+                		label="Activate Logging" 
+                		description="Activate logging to write trace data in logs/system_log.txt."
+               			default="0"
+                >
+                	<option value='1'>Yes</option>
+                	<option value='0'>No</option>
+         		</field>   
+			</fieldset>
+			<fieldset 	name="d5_library" 
+						label="D5 Library Controls">
+				<field 	name="doc_type" 
+						label="Document Type" 
+						description="Determines the type of library this module instance will serve. "
+						type="radio"
+						default="mtg_min"
+				>
+					<option value='min'>Meeting Minutes</option>
+					<option value='job'>Job Descriptions</option>
+					<option value='policy'>RSPS Policy</option>
+				</field>
+				<field	name="lib_folder"
+						label="Library Folder"
+						description="Enter the folder name (relative to document root) where files are to be stored. Do not use a beginning '/'.  "
+						type="text"
+						default="documents/library/minutes"
+				>	
+				</field>
+			</fieldset>
+			<fieldset
+				name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" 
+					default="mtg-date" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>
